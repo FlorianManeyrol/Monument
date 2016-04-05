@@ -19,8 +19,15 @@
 }
 
 /* Navbar logo */
-.navbar-wagon-brand img {
-  width: 50px;
+.navbar-wagon-brand { 
+  color: #fff;
+  font-family: Ubuntu;
+  font-weight: bold;
+  font-size: 20px;
+	img {
+  	height: 25px;
+  	margin-bottom: 5px;
+	}
 }
 
 /* Navbar right section (with form, links, button) */

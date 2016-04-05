@@ -4,6 +4,12 @@
  * Feel free to change them and create your own
  * ------------------------------------- */
 
+ // Global
+ a:hover, a:focus {
+    color: white;
+    text-decoration: none;
+}
+
 // Paddings
 .padded {
   padding-top: 5em;
@@ -45,3 +51,5 @@
 	width:100%;
 	height: calc(100vh - 140px);
 }
+
+

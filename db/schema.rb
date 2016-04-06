@@ -11,10 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405101903) do
+ActiveRecord::Schema.define(version: 20160406093938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "missions", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "city"
+    t.datetime "start_at"
+    t.datetime "finished_at"
+    t.boolean  "full",            default: false
+    t.string   "contact_name"
+    t.string   "contact_mobile"
+    t.string   "contact_email"
+    t.integer  "remuneration"
+    t.integer  "subscription"
+    t.integer  "number_of_place"
+    t.string   "category"
+    t.integer  "user_id"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
+  add_index "missions", ["user_id"], name: "index_missions_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -34,4 +55,5 @@ ActiveRecord::Schema.define(version: 20160405101903) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "missions", "users"
 end

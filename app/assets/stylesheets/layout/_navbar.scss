@@ -7,7 +7,7 @@
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
-  position: relative;
+  position: absolute;
   top:0px;
   z-index: 2;
   width: 100%;
@@ -26,7 +26,6 @@
 .navbar-wagon-brand { 
   color: #fff;
   font-family: Ubuntu;
-  font-weight: bold;
   font-size: 20px;
 	img {
   	height: 25px;

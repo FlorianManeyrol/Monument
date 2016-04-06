@@ -1,6 +1,6 @@
 class MissionsController < ApplicationController
-	skip_before_action :authenticate_user!, only: [:index, :show, :new, :create]
-	before_action :find_mission, only: :show
+	skip_before_action :authenticate_user!, only: [:index, :show, :destroy]
+	before_action :find_mission, only: [:show, :update, :destroy]
 
   def index
   	@missions = Mission.all
@@ -15,10 +15,11 @@ class MissionsController < ApplicationController
 
   def create
   	@mission = Mission.new(mission_params)
+  	@mission.user = current_user
   	if @mission.save
   		redirect_to @mission
   	else
-  		render 'new'
+  		render :new
   	end
   end
 
@@ -26,9 +27,17 @@ class MissionsController < ApplicationController
   end
 
   def update
+  	@mission = Mission.update(mission_params)
+  	if @mission.save
+  		redirect_to @mission
+  	else
+  		render :edit
+  	end
   end
 
   def destroy
+  	@mission.destroy
+  	redirect_to missions_path
   end
 
   private 

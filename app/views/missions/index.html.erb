@@ -5,7 +5,11 @@
 
 
 <%= link_to 'Creer une mission', new_mission_path, class: 'btn-medium' %>
+
 <% @missions.each do |mission| %>
-<p><li><%= mission.title %></li></p>
+<p><%= mission.title %></p>
+<%= link_to mission do %>
+go <i class="fa fa-angle-right"></i>
+<% end %>
 <% end %>
 

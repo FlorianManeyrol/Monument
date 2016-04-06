@@ -5,7 +5,9 @@
 #jumbo {
 	background-image: image-url('church-sky.jpg');
 	width:100%;
-	height:100vh; // height: calc(100vh - 70px);
+	height:100vh;
+	position: absolute;
+  top: 0px; // height: calc(100vh - 70px);
 	background-size: cover;
 	background-position: center;
 }

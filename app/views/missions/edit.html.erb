@@ -1,0 +1,12 @@
+<%= render 'shared/navbar' %>
+<h1>Missions#edit</h1>
+<p>Find me in app/views/missions/edit.html.erb</p>
+
+
+
+
+<%= simple_form_for @mission do |f| %>
+	<%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.submit 'updater une mission' %>
+<% end %>

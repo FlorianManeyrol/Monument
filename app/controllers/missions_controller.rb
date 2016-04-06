@@ -1,6 +1,6 @@
 class MissionsController < ApplicationController
 	skip_before_action :authenticate_user!, only: [:index, :show, :destroy]
-	before_action :find_mission, only: [:show, :update, :destroy]
+	before_action :find_mission, only: [:show, :edit, :update, :destroy]
 
   def index
   	@missions = Mission.all
@@ -27,8 +27,7 @@ class MissionsController < ApplicationController
   end
 
   def update
-  	@mission = Mission.update(mission_params)
-  	if @mission.save
+  	if @mission.update(mission_params)
   		redirect_to @mission
   	else
   		render :edit

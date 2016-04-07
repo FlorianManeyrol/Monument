@@ -35,11 +35,13 @@
 	height: 600px;
 }
 
-.news-title h2 {
+.news-title {
 	color: $bnbgrey;
   margin-top:60px;
   margin-bottom:45px;
-  font-weight:bold;
+  h2 {
+  	font-weight:bold;
+  }
 }
 
 .card {

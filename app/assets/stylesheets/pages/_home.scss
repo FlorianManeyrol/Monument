@@ -2,16 +2,19 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+
+// JUMBO SECTION
 #jumbo {
 	background-image: image-url('church-sky.jpg');
 	width:100%;
 	height:100vh;
-	position: absolute;
+	position: relative;
   top: 0px; // height: calc(100vh - 70px);
 	background-size: cover;
 	background-position: center;
 }
 
+// CATHPHRASE SECTION
 #catchphrase {
 	h1 {
 		color:white;
@@ -24,4 +27,41 @@
 		font-size:20px;
 		margin-bottom:30px;
 	}
+}
+
+// NEWS SECTION
+#news {
+	position:relative;
+	height: 600px;
+}
+
+.news-title {
+	color: $bnbgrey;
+  margin-top:60px;
+  margin-bottom:45px;
+  h2 {
+  	font-weight:bold;
+  }
+}
+
+.card {
+	height:300px;
+	width:auto;
+	color:white;
+	background-size: cover !important;
+	position:relative;
+	margin:5px 0px;
+	padding:15px 0px;
+}
+
+#church-snow {
+	background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), image-url('church-snow.jpg');
+}
+
+#buldo {
+	background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), image-url('buldo.jpg');
+}
+
+#berlin {
+	background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), image-url('berlin.jpg');
 }

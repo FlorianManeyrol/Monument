@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :assos
+  devise_for :users
+
 	resources :missions
 
-  devise_for :users
+	get'/acces-association' => 'pages#acces-asso'
+
   root to: 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

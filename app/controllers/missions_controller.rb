@@ -1,5 +1,5 @@
 class MissionsController < ApplicationController
-	# skip_before_action :authenticate_user!, only: [:index, :show, :destroy]
+	skip_before_action :authenticate_user!, only: [:index, :show, :destroy]
 	skip_before_action :authenticate_asso!, only: [:index, :show, :destroy]
 	before_action :find_mission, only: [:show, :edit, :update, :destroy]
 

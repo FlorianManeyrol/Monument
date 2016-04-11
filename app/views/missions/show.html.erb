@@ -4,7 +4,7 @@
 <p>Find me in app/views/missions/show.html.erb</p>
 
 <%= @mission.description %>
-<% if @mission.user == current_user %>
+<% if @mission.user == current_user && @mission.asso == current_asso %>
 <p><%= link_to 'editer', edit_mission_path(@mission)%></p>
 <p><%= link_to 'Supprimer', mission_path(@mission), method: :delete, data: { confirm: "Are you sure?" } %></p>
 <% end %>      
